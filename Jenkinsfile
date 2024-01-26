@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout'){
            steps {
                 git credentialsId: '149467656+dosapatisaiteja@users.noreply.github.com', 
-                url: 'https://github.com/dosapatisaiteja/Simple-CICD-Project',
+                url: 'https://github.com/dosapatisaiteja/simple-cicd-project',
                 branch: 'main'
            }
         }
@@ -21,7 +21,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Buid Docker Image'
-                    docker build -t SAITEJA/simple-CICD:${BUILD_NUMBER} .
+                    docker build -t SAITEJA/simple-cicd-project:${BUILD_NUMBER} .
                     '''
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
-                    docker push SAITEJA/simple-CICD:${BUILD_NUMBER}
+                    docker push SAITEJA/simple-cicd-project:${BUILD_NUMBER}
                     '''
                 }
             }
@@ -57,7 +57,7 @@ pipeline {
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
-                        git push https://github.com/iam-veeramalla/cicd-demo-manifests-repo.git HEAD:main
+                        git push https://github.com/dosapatisaiteja/cicd-demo-manifests-repo HEAD:main
                         '''                        
                     }
                 }
