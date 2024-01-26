@@ -21,7 +21,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Buid Docker Image'
-                    docker build -t SAITEJA/simple-cicd-project:${BUILD_NUMBER} .
+                    docker build -t saiteja/simple-cicd-project:${BUILD_NUMBER} .
                     '''
                 }
             }
@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
-                    docker push SAITEJA/simple-cicd-project:${BUILD_NUMBER}
+                    docker push saiteja/simple-cicd-project:${BUILD_NUMBER}
                     '''
                 }
             }
