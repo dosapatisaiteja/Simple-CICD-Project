@@ -41,7 +41,7 @@ pipeline {
         stage('Checkout K8S manifest SCM'){
             steps {
                 git credentialsId: '149467656+dosapatisaiteja@users.noreply.github.com', 
-                url: 'https://github.com/dosapatisaiteja/cicd-demo-manifests-repo.git',
+                url: 'https://github.com/dosapatisaiteja/simple-cicd-project.git',
                 branch: 'main'
             }
         }
